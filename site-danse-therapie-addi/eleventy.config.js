@@ -1,6 +1,11 @@
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
+  // Empêche Eleventy de transformer README.md en page /readme/.
+  // (Écrit ici plutôt que dans .eleventyignore : ce fichier caché est parfois
+  // ignoré par l'upload "glisser-déposer" de l'interface web de GitHub.)
+  eleventyConfig.ignores.add("README.md");
+
   // --- Fichiers statiques copiés tels quels ------------------------------
   // (css/style.njk n'est PAS copié ici : c'est un gabarit, voir plus bas)
   eleventyConfig.addPassthroughCopy("js");
