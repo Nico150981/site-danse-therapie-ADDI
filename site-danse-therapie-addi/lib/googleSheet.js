@@ -83,7 +83,12 @@ function slugify(texte) {
 
 function normalize(rows) {
   return rows
-    .filter((row) => String(row.publication || "").trim().toLowerCase() === "oui")
+    .map((row) => ({
+      ...row,
+      type: String(row.type || "").trim().toLowerCase(),
+      publication: String(row.publication || "").trim().toLowerCase(),
+    }))
+    .filter((row) => row.publication === "oui")
     .map((row) => ({
       ...row,
       ordre: Number(row.ordre) || 0,
