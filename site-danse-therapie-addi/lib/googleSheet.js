@@ -64,10 +64,31 @@ function loadFallback() {
   return JSON.parse(raw);
 }
 
+/**
+ * Transforme n'importe quel texte (avec accents, espaces, apostrophes,
+ * majuscules...) en un slug sûr pour une URL / un nom de fichier :
+ * uniquement des minuscules, chiffres et tirets.
+ * Ainsi, ce qui est tapé dans la Google Sheet (colonne "slug", ou le titre
+ * si la case slug est vide) ne peut jamais faire échouer le déploiement.
+ */
+function slugify(texte) {
+  return String(texte || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // enlève les accents (é -> e, etc.)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-") // tout ce qui n'est pas lettre/chiffre -> tiret
+    .replace(/^-+|-+$/g, "") // pas de tiret au début/à la fin
+    .replace(/-{2,}/g, "-"); // pas de tirets multiples de suite
+}
+
 function normalize(rows) {
   return rows
     .filter((row) => String(row.publication || "").trim().toLowerCase() === "oui")
-    .map((row) => ({ ...row, ordre: Number(row.ordre) || 0 }))
+    .map((row) => ({
+      ...row,
+      ordre: Number(row.ordre) || 0,
+      slug: slugify(row.slug || row.titre),
+    }))
     .sort((a, b) => a.ordre - b.ordre);
 }
 
@@ -96,4 +117,4 @@ function getContenu() {
   return cachedPromise;
 }
 
-module.exports = { getContenu, parseGvizResponse };
+module.exports = { getContenu, parseGvizResponse, slugify };
