@@ -1,0 +1,19 @@
+---
+permalink: "sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.url }}/</loc></url>
+  <url><loc>{{ site.url }}/a-propos/</loc></url>
+  <url><loc>{{ site.url }}/contact/</loc></url>
+  <url><loc>{{ site.url }}/blog/</loc></url>
+  <url><loc>{{ site.url }}/mentions-legales/</loc></url>
+  <url><loc>{{ site.url }}/politique-confidentialite/</loc></url>
+{% for item in pages %}
+  <url><loc>{{ site.url }}/{{ item.slug }}/</loc></url>
+{% endfor %}
+{% for item in articles %}
+  <url><loc>{{ site.url }}/blog/{{ item.slug }}/</loc></url>
+{% endfor %}
+</urlset>

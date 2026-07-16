@@ -1,0 +1,20 @@
+<a class="lien-evitement" href="#contenu-principal">Aller au contenu</a>
+<header class="en-tete">
+  <div class="conteneur en-tete__barre">
+    <a href="/" class="marque">{{ site.nom }}</a>
+    <button class="bascule-nav" type="button" aria-expanded="false" aria-controls="nav-principale">
+      <span class="visually-hidden">Ouvrir le menu</span>
+      <span class="bascule-nav__icone" aria-hidden="true"></span>
+    </button>
+    <nav id="nav-principale" class="nav-principale" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        {% for item in pages %}
+        <li><a href="/{{ item.slug }}/">{{ item.titre }}</a></li>
+        {% endfor %}
+        <li><a href="/blog/">Journal</a></li>
+        <li><a href="/contact/" class="nav-principale__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

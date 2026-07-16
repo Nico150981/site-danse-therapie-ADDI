@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if titre %}{{ titre }} · {{ site.nom }}{% else %}{{ site.nom }} · {{ site.accroche }}{% endif %}</title>
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family={{ site.polices.display }}&family={{ site.polices.corps }}&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+<meta property="og:site_name" content="{{ site.nom }}">
+<meta property="og:title" content="{{ titre or site.accroche }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:type" content="{% if schema == 'Article' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/images/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ titre or site.accroche }}">
+<meta name="twitter:description" content="{{ description or site.description }}">
+<meta name="twitter:image" content="{{ site.url }}/images/og-image.jpg">
+
+{# --- Données structurées communes à toutes les pages -------------------- #}
+{# Tous les champs texte passent par le filtre "jsonStr" : il ajoute lui-même
+   les guillemets et échappe correctement le contenu, pour ne jamais casser
+   le JSON si un titre ou une description contient des guillemets. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ (site.url + "/#site") | jsonStr | safe }},
+      "name": {{ site.nom | jsonStr | safe }},
+      "url": {{ site.url | jsonStr | safe }},
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": {{ (site.url + "/#business") | jsonStr | safe }},
+      "name": {{ site.nom | jsonStr | safe }},
+      "description": {{ site.description | jsonStr | safe }},
+      "url": {{ site.url | jsonStr | safe }}{% if site.email %},
+      "email": {{ site.email | jsonStr | safe }}{% endif %}{% if site.telephone %},
+      "telephone": {{ site.telephone | jsonStr | safe }}{% endif %}{% if site.ville %},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ site.ville | jsonStr | safe }},
+        "addressCountry": "FR"
+      }{% endif %},
+      "priceRange": "€€"
+    }
+  ]
+}
+</script>
+
+{# --- Données structurées propres à la page (facultatives) --------------- #}
+{% include "partials/jsonld.njk" %}

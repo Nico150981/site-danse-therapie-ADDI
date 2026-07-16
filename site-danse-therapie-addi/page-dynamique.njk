@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: pages
+  size: 1
+  alias: item
+permalink: "/{{ item.slug }}/"
+schema: "Service"
+eleventyComputed:
+  titre: "{{ item.titre }}"
+  description: "{{ item.resume or item.titre }}"
+  image: "{{ item.image }}"
+---
+<article class="conteneur au-scroll" style="padding-block: var(--espace-section)">
+  <h1>{{ item.titre }}</h1>
+  {% if item.image %}
+  {% image item.image, item.titre %}
+  {% endif %}
+  <div class="contenu-riche">
+    {{ item.contenu | safe }}
+  </div>
+</article>

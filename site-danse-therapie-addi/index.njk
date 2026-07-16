@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+titre: "Accueil"
+description: "Danse-thérapie selon la méthode ADDI et médiation créative : un accompagnement par le mouvement et la création."
+faq:
+  - question: "Faut-il savoir danser pour venir ?"
+    reponse: "Non. La danse-thérapie ne demande aucune technique ni expérience du mouvement : elle s'appuie sur ce que le corps sait déjà faire."
+  - question: "À qui s'adressent les séances ?"
+    reponse: "Aux adultes et aux groupes souhaitant explorer, par le mouvement et la création, un mieux-être corporel et émotionnel."
+  - question: "Comment se déroule une première séance ?"
+    reponse: "Un temps d'échange, un temps de mouvement guidé, puis un temps de retour et d'intégration - à votre rythme."
+---
+{% from "partials/macros.njk" import traitSignature %}
+
+<section class="hero">
+  <div class="conteneur">
+    <h1>{{ site.accroche }}</h1>
+    <p class="hero__sous-titre">{{ site.description }}</p>
+    <div class="hero__trait">{{ traitSignature(120) }}</div>
+    <div class="hero__actions">
+      <a class="bouton" href="/contact/">Prendre contact</a>
+      {% if pages.length > 0 %}
+      <a class="bouton bouton--fantome" href="/{{ pages[0].slug }}/">Découvrir l'approche</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="au-scroll">
+  <div class="conteneur">
+    <div class="section-tete">
+      <span class="eyebrow">Le déroulé d'une séance</span>
+      <h2>Trois temps, un seul mouvement</h2>
+    </div>
+    <div class="arc">
+      <div class="arc__etape">
+        <span class="arc__numero">01</span>
+        <h3>Arrivée</h3>
+        <p>Un temps d'accueil et de parole, pour poser ce qui est là aujourd'hui - dans le corps comme dans l'esprit.</p>
+      </div>
+      <div class="arc__etape">
+        <span class="arc__numero">02</span>
+        <h3>Mouvement</h3>
+        <p>Une exploration guidée, individuelle ou en groupe, à partir du mouvement spontané et de médiations créatives.</p>
+      </div>
+      <div class="arc__etape">
+        <span class="arc__numero">03</span>
+        <h3>Intégration</h3>
+        <p>Un retour verbal ou symbolique sur ce qui a traversé la séance, pour en garder la trace et le sens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if pages.length > 0 %}
+<section class="au-scroll">
+  <div class="conteneur">
+    <div class="section-tete">
+      <span class="eyebrow">Mon approche</span>
+      <h2>Danse-thérapie ADDI &amp; médiation créative</h2>
+    </div>
+    <div class="approche">
+      {% for item in pages %}
+      <div class="approche__bloc">
+        <h3><a href="/{{ item.slug }}/">{{ item.titre }}</a></h3>
+        <p>{{ item.resume or item.contenu }}</p>
+        <p><a href="/{{ item.slug }}/">Lire la suite →</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="au-scroll">
+  <div class="conteneur">
+    <div class="section-tete">
+      <span class="eyebrow">Paroles</span>
+      <h2>Ce qu'en disent les personnes accompagnées</h2>
+    </div>
+    <blockquote class="temoignage">
+      « Un espace où le corps a enfin le droit de ne pas savoir, et où quelque chose se dénoue, doucement. »
+      <cite>— Une personne accompagnée</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="au-scroll">
+  <div class="conteneur" style="text-align:center">
+    <h2>Envie d'en parler ?</h2>
+    <p style="margin-inline:auto">Écrivez-moi pour toute question ou pour prendre rendez-vous - je réponds personnellement à chaque message.</p>
+    <a class="bouton" href="/contact/">Me contacter</a>
+  </div>
+</section>

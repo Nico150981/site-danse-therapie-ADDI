@@ -1,0 +1,17 @@
+{
+  "name": "site-danse-therapie-addi",
+  "version": "1.0.0",
+  "description": "Site vitrine - danse-therapie ADDI & mediation creative - propulse par Eleventy, contenu edite via Google Sheets",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^4.0.2"
+  }
+}

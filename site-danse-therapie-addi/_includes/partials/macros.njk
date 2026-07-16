@@ -1,0 +1,9 @@
+{# Le "trait" est l'élément-signature du site : une ligne continue, dessinée
+   comme un geste, qui réapparaît (à différentes échelles) dans le hero, entre
+   les sections et dans le pied de page - pour incarner visuellement l'idée
+   de continuité du mouvement, centrale en danse-thérapie. #}
+{% macro traitSignature(hauteur=140, classe="") %}
+<svg class="trait-signature {{ classe }}" viewBox="0 0 700 160" preserveAspectRatio="none" style="--trait-hauteur:{{ hauteur }}px" aria-hidden="true" focusable="false">
+  <path d="M10 110 C60 20 100 20 140 90 C180 160 230 160 260 90 C290 20 340 20 380 100 C410 160 460 150 500 80 C530 30 580 30 610 90 C630 130 660 130 690 70" />
+</svg>
+{% endmacro %}

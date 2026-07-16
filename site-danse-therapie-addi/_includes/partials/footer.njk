@@ -1,0 +1,19 @@
+{% from "partials/macros.njk" import traitSignature %}
+<footer class="pied">
+  <div class="conteneur pied__grille">
+    <div>
+      <p class="pied__marque">{{ site.nom }}</p>
+      <p>{{ site.accroche }}</p>
+    </div>
+    <div>
+      <ul class="pied__liens">
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+        <li><a href="/politique-confidentialite/">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+    <div class="pied__signature">
+      {{ traitSignature(40, "trait-signature--pied") }}
+      <p>© {{ annee }} {{ site.nom }}</p>
+    </div>
+  </div>
+</footer>
