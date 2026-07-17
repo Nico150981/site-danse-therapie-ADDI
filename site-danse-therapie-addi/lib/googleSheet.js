@@ -68,21 +68,45 @@ function loadFallback() {
  * Transforme n'importe quel texte (avec accents, espaces, apostrophes,
  * majuscules...) en un slug sûr pour une URL / un nom de fichier :
  * uniquement des minuscules, chiffres et tirets.
- * Ainsi, ce qui est tapé dans la Google Sheet (colonne "slug", ou le titre
- * si la case slug est vide) ne peut jamais faire échouer le déploiement.
  */
 function slugify(texte) {
   return String(texte || "")
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // enlève les accents (é -> e, etc.)
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-") // tout ce qui n'est pas lettre/chiffre -> tiret
-    .replace(/^-+|-+$/g, "") // pas de tiret au début/à la fin
-    .replace(/-{2,}/g, "-"); // pas de tirets multiples de suite
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-");
+}
+
+/**
+ * Certaines lignes de la Google Sheet sont des "suites" involontaires :
+ * quand on tape un texte de plusieurs paragraphes et qu'on appuie sur
+ * Entrée entre eux (au lieu d'Alt+Entrée), Google Sheets crée une nouvelle
+ * ligne du tableau au lieu d'un saut de paragraphe dans la même case.
+ * Ces lignes de "suite" n'ont pas de colonne "type" remplie (juste du
+ * texte dans "contenu"). On les rattache automatiquement à la ligne
+ * précédente qui, elle, a un type - sans rien demander à l'utilisateur.
+ */
+function regrouperLignesDeSuite(rows) {
+  const groupes = [];
+  let courant = null;
+
+  for (const row of rows) {
+    const aUnType = String(row.type || "").trim() !== "";
+    if (aUnType) {
+      courant = { ...row };
+      groupes.push(courant);
+    } else if (courant && String(row.contenu || "").trim() !== "") {
+      courant.contenu = `${courant.contenu || ""}\n\n${row.contenu}`.trim();
+    }
+  }
+
+  return groupes;
 }
 
 function normalize(rows) {
-  return rows
+  return regrouperLignesDeSuite(rows)
     .map((row) => ({
       ...row,
       type: String(row.type || "").trim().toLowerCase(),
@@ -97,8 +121,6 @@ function normalize(rows) {
     .sort((a, b) => a.ordre - b.ordre);
 }
 
-// Memoization : un seul appel reseau meme si plusieurs fichiers de donnees
-// (_data/contenu.js, _data/pages.js, _data/articles.js) le demandent.
 let cachedPromise = null;
 
 function getContenu() {
@@ -122,4 +144,4 @@ function getContenu() {
   return cachedPromise;
 }
 
-module.exports = { getContenu, parseGvizResponse, slugify };
+module.exports = { getContenu, parseGvizResponse, slugify, normalize, regrouperLignesDeSuite };
