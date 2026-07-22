@@ -1,8 +1,0 @@
-/* PRATICIENNE */
-Danse-thérapeute (méthode ADDI) & médiation créative.
-Site conçu et tenu à jour par la praticienne elle-même.
-
-/* SITE */
-Généré avec Eleventy (11ty).
-Hébergé sur Netlify.
-Contenu édité via une feuille Google Sheets.
