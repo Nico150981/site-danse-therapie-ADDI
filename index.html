@@ -66,7 +66,6 @@
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
-        /* Image d'accueil */
         .accueil-image {
             width: 100%;
             max-height: 500px;
@@ -138,6 +137,21 @@
             color: var(--texte-corps);
             font-size: 0.9rem;
         }
+        .section-lieu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .section-lieu img {
+            flex: 1 1 300px;
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .section-lieu .texte {
+            flex: 2 1 400px;
+        }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; }
             nav a { margin: 0 0.5rem; font-size: 0.9rem; }
@@ -151,6 +165,7 @@
         <a href="#" class="logo">Danse-Thérapie ADDI</a>
         <nav>
             <a href="#accueil">Accueil</a>
+            <a href="#lieu">Le Lieu</a>
             <a href="#danse">Danse-Thérapie</a>
             <a href="#mediation">Médiation</a>
             <a href="#contact">Contact</a>
@@ -180,6 +195,20 @@
         </div>
 
         <a href="#contact" class="btn">Prendre rendez-vous</a>
+    </section>
+
+    <!-- Section Lieu d’Accueil & de Soin -->
+    <section id="lieu" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Lieu d’Accueil & de Soin</h2>
+            <div class="section-lieu">
+                <div class="texte">
+                    <p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p>
+                </div>
+                <!-- PHOTO DU LIEU -->
+                <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux">
+            </div>
+        </div>
     </section>
 
     <!-- Section Danse-Thérapie -->
