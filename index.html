@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative à Mornant</title>
-    <meta name="description" content="Séances de danse-thérapie ADDI et médiation créative à Mornant. Un espace bienveillant pour se retrouver et se recréer.">
+    <meta name="description" content="Séances de danse-thérapie ADDI et médiation créative à Mornant. Accompagnement personnalisé pour burn-out, transition de vie, mieux-être.">
+    <meta name="keywords" content="burnout, burn-out, danse thérapie, ADDI, médiation créative, Mornant, bien-être, mouvement, soin, corps, Nicolas Charreyre">
+    <meta name="author" content="Nicolas Charreyre">
+    <meta name="robots" content="index, follow">
     
+    <meta property="og:title" content="Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative">
+    <meta property="og:description" content="Séances de danse-thérapie ADDI et médiation créative à Mornant. Un espace bienveillant pour se retrouver et se recréer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ubiquitous-snickerdoodle-d884d9.netlify.app">
+    <meta property="og:image" content="https://ubiquitous-snickerdoodle-d884d9.netlify.app/images/photo-accueil.jpg">
+    <meta property="og:locale" content="fr_FR">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative">
+    <meta name="twitter:description" content="Danse-thérapie ADDI, médiation créative à Mornant. Accompagnement burnout, transition de vie.">
+    <meta name="twitter:image" content="https://ubiquitous-snickerdoodle-d884d9.netlify.app/images/photo-accueil.jpg">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nicolas Charreyre - Danse-Thérapie ADDI & Médiation Créative",
+      "description": "Séances de danse-thérapie ADDI et médiation créative à Mornant. Spécialisé dans l'accompagnement du burn-out, des transitions de vie et du mieux-être.",
+      "url": "https://ubiquitous-snickerdoodle-d884d9.netlify.app",
+      "telephone": "0782637092",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "17 rue Waldwisse",
+        "addressLocality": "Mornant",
+        "postalCode": "69440",
+        "addressCountry": "FR"
+      },
+      "priceRange": "En fonction des revenus",
+      "sameAs": []
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -53,7 +88,7 @@
             text-decoration: none;
         }
         nav a {
-            margin-left: 1.5rem;
+            margin-left: 1.2rem;
             text-decoration: none;
             color: var(--texte-corps);
             font-weight: 600;
@@ -68,6 +103,12 @@
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
+        h3 {
+            font-family: var(--police-titres);
+            font-size: 1.8rem;
+            color: var(--texte-titres);
+            margin-bottom: 1rem;
+        }
         .accueil-image {
             width: 100%;
             max-height: 500px;
@@ -80,8 +121,6 @@
             font-size: 2.2rem;
             font-family: var(--police-titres);
             color: var(--texte-titres);
-            text-align: center;
-            margin-bottom: 2rem;
             font-style: italic;
         }
         .accueil-comment {
@@ -142,7 +181,7 @@
             color: var(--texte-corps);
             font-size: 1rem;
         }
-        /* Mise en page avec image à droite (utilisé pour Lieu et Contact) */
+        /* Mise en page avec image à droite */
         .section-avec-image {
             display: flex;
             flex-wrap: wrap;
@@ -158,6 +197,10 @@
         .section-avec-image .texte {
             flex: 2 1 400px;
             font-size: 1.2rem;
+        }
+        .photo-contact {
+            flex: 0 1 200px !important;
+            max-width: 200px !important;
         }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; }
@@ -176,6 +219,8 @@
             <a href="#accueil">Accueil</a>
             <a href="#lieu">Le Lieu</a>
             <a href="#danse">Danse-Thérapie</a>
+            <a href="#parcours">Mon parcours</a>
+            <a href="#approche">Approche</a>
             <a href="#mediation">Médiation</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -183,16 +228,26 @@
 
     <!-- Section Accueil -->
     <section id="accueil" style="padding-top: 2rem; padding-bottom: 6rem;">
-        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Danse et mouvement" class="accueil-image">
-        <div class="accueil-intro">
-            Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent
+        <img src="images/accueil-isadora.jpg" alt="Danse et mouvement" class="accueil-image">
+
+        <div class="section-avec-image" style="margin-bottom: 2rem;">
+            <div class="texte">
+                <div class="accueil-intro">Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent</div>
+            </div>
+            <img src="images/bienvenue.png" alt="Bienvenue">
         </div>
+
         <p class="accueil-comment">Comment :</p>
         <p>Prendre le temps de ralentir et laisser le chemin se faire en soi</p>
         <p style="margin-top: 1.5rem;">Avant l'épuisement total ou après un Burnout, une période de transition de vie complexe, venez prendre le temps de ralentir, de laisser le chemin se faire en soi.</p>
-        <div class="citation-bleue">
-            « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
+
+        <div class="section-avec-image" style="margin-top: 2rem;">
+            <div class="citation-bleue" style="margin:0; flex: 2 1 400px;">
+                « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
+            </div>
+            <img src="images/ressourcement.jpg" alt="Ressourcement" style="flex: 1 1 300px;">
         </div>
+
         <div class="bloc-chemin">
             <p style="font-size: 1.4rem; font-weight: 600; color: var(--texte-titres); margin-bottom: 1rem;">C’est le chemin qui compte :</p>
             <p>vous êtes libre pour imaginer, créer, explorer, s'exprimer et danser.</p>
@@ -206,9 +261,7 @@
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Lieu d’Accueil & de Soin</h2>
             <div class="section-avec-image">
-                <div class="texte">
-                    <p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p>
-                </div>
+                <div class="texte"><p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p></div>
                 <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux">
             </div>
         </div>
@@ -218,30 +271,67 @@
     <section id="danse">
         <h2>Danse-Thérapie ADDI</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Pour qui ?</h3>
-                <p>Adultes en transition de vie, surmenage, ou en quête de mieux-être corporel et émotionnel.</p>
+            <div class="card"><h3>Pour qui ?</h3><p>Adultes en transition de vie, surmenage, ou en quête de mieux-être corporel et émotionnel.</p></div>
+            <div class="card"><h3>L'approche</h3><p>Une plongée dans l’ici et maintenant, basée sur l’écoute du corps et le mouvement authentique.</p></div>
+            <div class="card"><h3>Le cadre</h3><p>Séances individuelles adaptées à vos besoins, dans un espace bienveillant et confidentiel.</p></div>
+        </div>
+        <h3 style="margin-top: 3rem;">Approche dynamique et souple</h3>
+        <p>L’accompagnement et le soin sont personnalisés. Je les adapte à chacun, dans l’instant présent et dans la continuité, en prenant en compte les besoins, les désirs, les ressources, ainsi que les dimensions physiques, émotionnelles et relationnelles. La parenthèse de soin est un lieu de recréation et de liberté, rien n’y est obligatoire, où l’on prend le temps de se retrouver, de créer de l’espace en soi et de renouer avec ses forces profondes.</p>
+    </section>
+
+    <!-- Section Mon parcours -->
+    <section id="parcours" style="background-color: var(--fond-page); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Mon parcours, au cœur du mouvement</h2>
+            <div class="section-avec-image" style="margin-bottom: 2rem;">
+                <div class="texte"><p>Je suis aide-soignant à domicile depuis plus de 14 ans. Passionné par les danses folkloriques d’Israël, la danse de louange et la danse naturelle, j’ai développé au fil du temps un profond intérêt pour le lien entre le mouvement, le soin et l’expression de soi.</p></div>
+                <img src="images/photo-addi.png" alt="ADDI">
             </div>
-            <div class="card">
-                <h3>L'approche</h3>
-                <p>Une plongée dans l’ici et maintenant, basée sur l’écoute du corps et le mouvement authentique.</p>
+            <div class="citation-bleue">« Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »</div>
+            <div class="section-avec-image" style="margin-top: 2rem;">
+                <div class="texte"><p>En 2021, j’ai suivi pendant un an une formation en art-thérapie à Avignon. Désireux de revenir aux origines de la danse-thérapie, j’ai ensuite participé, en tant que soignant, à une formation continue ADDI (Approche Développementale Dynamique et Intégrative) avec Marie-Ange Durwang, aux côtés de psychomotriciens. Cette expérience m’a permis de rencontrer des personnes formidables et de découvrir la richesse d’un travail de groupe fondé sur la bienveillance, la qualité de présence et le soin de soi.</p></div>
+                <img src="images/photo-atelier.jpg" alt="Atelier">
             </div>
-            <div class="card">
-                <h3>Le cadre</h3>
-                <p>Séances individuelles adaptées à vos besoins, dans un espace bienveillant et confidentiel.</p>
-            </div>
+            <p style="margin-top: 2rem;">Je poursuis également mon exploration par la participation à plusieurs ateliers de Body-Mind Centering. L’ADDI m’a offert l’occasion d’unifier mes expériences somatiques, artistiques, relationnelles et dansées.</p>
+            <p>Aujourd’hui, animé par une profonde conscience des fragilités de notre société, j’ai souhaité proposer un accompagnement aux adultes en transition, en surmenage ou en burn-out. Mon intention est d’offrir un espace d’écoute, de présence et de ressourcement, dans un cadre humain, respectueux et bienveillant.</p>
         </div>
     </section>
 
-    <!-- Section Médiation Créative -->
+    <!-- Section Approche -->
+    <section id="approche">
+        <h2>Une approche globale et dynamique du soin</h2>
+        <div class="citation-bleue">« Le soin s’enracine dans l’observation clinique de l’enfant sain »</div>
+        <div class="section-avec-image" style="margin-top: 2rem;">
+            <div class="texte"><p>Ce qui me parle profondément dans la démarche de l’ADDI, c’est que le travail de soin s’enracine dans l’observation clinique de l’enfant sain, son mouvement physique au sein de son environnement naturel, pour favoriser son développement. C'est un cadre de référence pour le soin de l'adulte. L’ADDI ce n’est pas une théorie, c’est « une plongée corporelle dans ici et maintenant ». J'ai revisité, observé et intégré sensoriellement mon propre mouvement de développement, toujours en relation. Cette approche m’a permis d'affiner une perception fine de l’autre : dans ses interactions, son identité naissante et son rapport à lui-même.</p></div>
+            <img src="images/photo-approche.png" alt="Approche ADDI">
+        </div>
+        <div class="citation-bleue" style="margin-top: 2rem;">« L’ADDI ce n’est pas une théorie, c’est une plongée corporelle dans l’ici et maintenant »</div>
+        <p style="margin-top: 2rem;">Au-delà de l’observation, ce chemin m’a profondément touchée. Revisiter mon histoire personnelle à travers mon développement, dans la relation et en moi-même, m’a offert un appui, une sécurité, une ressource intérieure que je ne soupçonnais pas. C’est cette ressource qui est aujourd’hui la matière première de mon accompagnement. Elle est devenue mon principal outil de soin : elle me permet d’accueillir l’autre dans sa vulnérabilité et de l’inviter à renouer avec son propre mouvement de vie.</p>
+        <div class="citation-bleue" style="margin-top: 2rem;">« J’ai reçu une sécurité, une ressource intérieure que je ne soupçonnais pas »</div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <img src="images/photo-ressource.jpg" alt="Ressource intérieure" style="max-width: 100%; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        </div>
+    </section>
+
+    <!-- Section Médiation Créative (mise à jour) -->
     <section id="mediation" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Médiation Créative</h2>
-            <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque atelier est un espace de liberté où l’on crée pour se recréer.</p>
+            <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque séance est un espace de liberté où l’on crée pour se recréer.</p>
+            <p>Sur ce socle vivant se sont greffés des dispositifs variés que j'ai intériorisés au fil du temps : médiation artistique, écoute musicale, approche corporelle et relationnelle.</p>
+            
+            <div class="citation-bleue">
+                « C’est là, dans cette simplicité, que je vous accompagne, pas à pas, geste après geste pour ouvrir un chemin des possibles »
+            </div>
+
+            <div class="section-avec-image" style="margin-top: 2rem;">
+                <img src="images/mediation-outils.png" alt="Outils de médiation">
+                <img src="images/mediation-accompagnement.jpg" alt="Accompagnement">
+            </div>
         </div>
     </section>
 
-    <!-- Section Contact avec photo -->
+    <!-- Section Contact -->
     <section id="contact">
         <h2>Contact</h2>
         <div class="section-avec-image">
@@ -249,8 +339,9 @@
                 <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
                 <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
                 <p>📧 contact@votre-email.com (à personnaliser)</p>
+                <p style="margin-top: 1rem; font-weight: 600;">Tarifs : en fonction de vos revenus</p>
             </div>
-            <img src="images/photo-contact.jpg" alt="Contact">
+            <img src="images/photo-contact.jpg" alt="Contact" class="photo-contact">
         </div>
     </section>
 
