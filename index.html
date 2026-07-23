@@ -22,8 +22,8 @@
             --texte-corps: #57534E;
             --accent: #0D9488;
             --accent-bordure: #0D9488;
-            --bleu-ciel: #E1F5FE;  /* fond bleu ciel très clair */
-            --bleu-ciel-texte: #0277BD; /* texte bleu soutenu */
+            --bleu-ciel: #E1F5FE;
+            --bleu-ciel-texte: #0277BD;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -66,7 +66,15 @@
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
-        /* Section accueil personnalisée */
+        /* Image d'accueil */
+        .accueil-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
         .accueil-intro {
             font-size: 1.8rem;
             font-family: var(--police-titres);
@@ -93,6 +101,13 @@
             font-style: italic;
             color: var(--bleu-ciel-texte);
             border-radius: 0 8px 8px 0;
+        }
+        .bloc-chemin {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--fond-carte);
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .btn {
             display: inline-block;
@@ -143,7 +158,10 @@
     </header>
 
     <!-- Section Accueil -->
-    <section id="accueil" style="padding-top: 6rem; padding-bottom: 6rem;">
+    <section id="accueil" style="padding-top: 2rem; padding-bottom: 6rem;">
+        <!-- IMAGE EN PREMIER (remplacez l'URL par votre propre image) -->
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Danse et mouvement" class="accueil-image">
+
         <div class="accueil-intro">
             Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent
         </div>
@@ -153,6 +171,14 @@
         <div class="citation-bleue">
             « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
         </div>
+
+        <!-- Bloc supplémentaire "C’est le chemin qui compte" -->
+        <div class="bloc-chemin">
+            <p style="font-size: 1.3rem; font-weight: 600; color: var(--texte-titres); margin-bottom: 1rem;">C’est le chemin qui compte :</p>
+            <p>vous êtes libre pour imaginer, créer, explorer, s'exprimer et danser.</p>
+            <p style="margin-top: 1.2rem;"><strong>Se déposer :</strong> déposer ses histoires et expériences, évacuer ses souffrances, troubles et mal-être, p(a)enser ses blessures, et réguler ses émotions.</p>
+        </div>
+
         <a href="#contact" class="btn">Prendre rendez-vous</a>
     </section>
 
