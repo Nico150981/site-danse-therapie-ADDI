@@ -22,6 +22,8 @@
             --texte-corps: #57534E;
             --accent: #0D9488;
             --accent-bordure: #0D9488;
+            --bleu-ciel: #E1F5FE;  /* fond bleu ciel très clair */
+            --bleu-ciel-texte: #0277BD; /* texte bleu soutenu */
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -64,25 +66,34 @@
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-            color: white;
+        /* Section accueil personnalisée */
+        .accueil-intro {
+            font-size: 1.8rem;
+            font-family: var(--police-titres);
+            color: var(--texte-titres);
             text-align: center;
-            padding: 8rem 2rem;
-            max-width: 100%;
+            margin-bottom: 2rem;
+            font-style: italic;
         }
-        .hero h1 { font-family: var(--police-titres); font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card {
-            background: var(--fond-carte);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s;
+        .accueil-comment {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
         }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { font-family: var(--police-titres); font-size: 1.6rem; color: var(--texte-titres); margin-bottom: 1rem; }
+        .citation-bleue {
+            background: var(--bleu-ciel);
+            border-left: 6px solid var(--bleu-ciel-texte);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-family: var(--police-titres);
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: italic;
+            color: var(--bleu-ciel-texte);
+            border-radius: 0 8px 8px 0;
+        }
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -95,17 +106,28 @@
             transition: background 0.3s;
         }
         .btn:hover { background: var(--accent-bordure); }
-        .citation {
-            background: var(--fond-citation);
-            border-left: 4px solid var(--accent-bordure);
-            padding: 1rem 2rem;
-            font-style: italic;
-            margin: 2rem 0;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card {
+            background: var(--fond-carte);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-family: var(--police-titres); font-size: 1.6rem; color: var(--texte-titres); margin-bottom: 1rem; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--fond-carte);
+            color: var(--texte-corps);
+            font-size: 0.9rem;
         }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; }
             nav a { margin: 0 0.5rem; font-size: 0.9rem; }
-            .hero h1 { font-size: 2.2rem; }
+            .accueil-intro { font-size: 1.4rem; }
+            .citation-bleue { font-size: 1.2rem; padding: 1rem; }
         }
     </style>
 </head>
@@ -113,16 +135,28 @@
     <header>
         <a href="#" class="logo">Danse-Thérapie ADDI</a>
         <nav>
+            <a href="#accueil">Accueil</a>
             <a href="#danse">Danse-Thérapie</a>
             <a href="#mediation">Médiation</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section class="hero">
-        <h1>Une parenthèse pour se retrouver</h1>
-        <p>Danse-thérapie ADDI & Médiations Créatives à Mornant, avec Nicolas Charreyre.</p>
+
+    <!-- Section Accueil -->
+    <section id="accueil" style="padding-top: 6rem; padding-bottom: 6rem;">
+        <div class="accueil-intro">
+            Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent
+        </div>
+        <p class="accueil-comment">Comment :</p>
+        <p style="font-size: 1.1rem;">Prendre le temps de ralentir et laisser le chemin se faire en soi</p>
+        <p style="margin-top: 1.5rem;">Avant l'épuisement total ou après un Burnout, une période de transition de vie complexe, venez prendre le temps de ralentir, de laisser le chemin se faire en soi.</p>
+        <div class="citation-bleue">
+            « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
+        </div>
         <a href="#contact" class="btn">Prendre rendez-vous</a>
     </section>
+
+    <!-- Section Danse-Thérapie -->
     <section id="danse">
         <h2>Danse-Thérapie ADDI</h2>
         <div class="grid">
@@ -140,22 +174,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Médiation Créative -->
     <section id="mediation" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Médiation Créative</h2>
             <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque atelier est un espace de liberté où l’on crée pour se recréer.</p>
-            <div class="citation">
-                "Un voyage pour sentir, goûter, savourer : vers un mieux-être."
-            </div>
         </div>
     </section>
+
+    <!-- Section Contact -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
         <p style="margin-top: 1rem; font-weight: 600;">📞 07 82 63 70 92</p>
         <p>📧 contact@votre-email.com (à personnaliser)</p>
     </section>
-    <footer style="text-align: center; padding: 2rem; background: var(--fond-carte); color: var(--texte-corps); font-size: 0.9rem;">
+
+    <footer>
         <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
     </footer>
 </body>
