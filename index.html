@@ -31,7 +31,7 @@
             background-color: var(--fond-page);
             color: var(--texte-corps);
             line-height: 1.7;
-            font-size: 1.2rem;  /* Augmentation de la taille de base */
+            font-size: 1.2rem;
         }
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -47,7 +47,7 @@
         }
         .logo {
             font-family: var(--police-titres);
-            font-size: 2rem;  /* un peu plus grand */
+            font-size: 2rem;
             font-weight: 600;
             color: var(--texte-titres);
             text-decoration: none;
@@ -58,13 +58,13 @@
             color: var(--texte-corps);
             font-weight: 600;
             transition: color 0.3s;
-            font-size: 1.1rem; /* navigation plus lisible */
+            font-size: 1.1rem;
         }
         nav a:hover { color: var(--accent); }
         section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
         h2 {
             font-family: var(--police-titres);
-            font-size: 3rem;  /* était 2.5rem */
+            font-size: 3rem;
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
@@ -77,7 +77,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         .accueil-intro {
-            font-size: 2.2rem;  /* était 1.8rem */
+            font-size: 2.2rem;
             font-family: var(--police-titres);
             color: var(--texte-titres);
             text-align: center;
@@ -85,7 +85,7 @@
             font-style: italic;
         }
         .accueil-comment {
-            font-size: 1.4rem;  /* était 1.2rem */
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--accent);
             margin-top: 2rem;
@@ -97,7 +97,7 @@
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             font-family: var(--police-titres);
-            font-size: 1.7rem;  /* était 1.5rem */
+            font-size: 1.7rem;
             font-weight: bold;
             font-style: italic;
             color: var(--bleu-ciel-texte);
@@ -133,7 +133,7 @@
             transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-5px); }
-        .card h3 { font-family: var(--police-titres); font-size: 1.9rem; color: var(--texte-titres); margin-bottom: 1rem; } /* était 1.6rem */
+        .card h3 { font-family: var(--police-titres); font-size: 1.9rem; color: var(--texte-titres); margin-bottom: 1rem; }
         .card p { font-size: 1.1rem; }
         footer {
             text-align: center;
@@ -142,19 +142,20 @@
             color: var(--texte-corps);
             font-size: 1rem;
         }
-        .section-lieu {
+        /* Mise en page avec image à droite (utilisé pour Lieu et Contact) */
+        .section-avec-image {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
         }
-        .section-lieu img {
+        .section-avec-image img {
             flex: 1 1 300px;
             max-width: 100%;
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        .section-lieu .texte {
+        .section-avec-image .texte {
             flex: 2 1 400px;
             font-size: 1.2rem;
         }
@@ -204,7 +205,7 @@
     <section id="lieu" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Lieu d’Accueil & de Soin</h2>
-            <div class="section-lieu">
+            <div class="section-avec-image">
                 <div class="texte">
                     <p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p>
                 </div>
@@ -240,12 +241,17 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Section Contact avec photo -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
-        <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
-        <p>📧 contact@votre-email.com (à personnaliser)</p>
+        <div class="section-avec-image">
+            <div class="texte">
+                <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
+                <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
+                <p>📧 contact@votre-email.com (à personnaliser)</p>
+            </div>
+            <img src="images/photo-contact.jpg" alt="Contact">
+        </div>
     </section>
 
     <footer>
