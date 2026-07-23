@@ -8,27 +8,30 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --vert-sauge: #9CAF88;
-            --terracotta: #D08B78;
-            --beige: #F5F0E6;
-            --blanc-casse: #FDFBF7;
-            --texte: #3A3A3A;
-            --police-titres: 'Cormorant Garamond', serif;
-            --police-corps: 'Nunito', sans-serif;
+            --police-titres: 'Playfair Display', Georgia, serif;
+            --police-corps: 'Inter', system-ui, sans-serif;
+            --police-mono: 'JetBrains Mono', monospace;
+            --fond-page: #FAF8F5;
+            --fond-carte: #FFFFFF;
+            --fond-citation: #F0FDFA;
+            --texte-titres: #292524;
+            --texte-corps: #57534E;
+            --accent: #0D9488;
+            --accent-bordure: #0D9488;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: var(--police-corps);
-            background-color: var(--blanc-casse);
-            color: var(--texte);
+            background-color: var(--fond-page);
+            color: var(--texte-corps);
             line-height: 1.7;
         }
         header {
-            background: rgba(253, 251, 247, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(5px);
             position: sticky;
             top: 0;
@@ -37,28 +40,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--vert-sauge);
+            border-bottom: 1px solid var(--accent-bordure);
         }
         .logo {
             font-family: var(--police-titres);
             font-size: 1.8rem;
             font-weight: 600;
-            color: var(--terracotta);
+            color: var(--texte-titres);
             text-decoration: none;
         }
         nav a {
             margin-left: 1.5rem;
             text-decoration: none;
-            color: var(--texte);
+            color: var(--texte-corps);
             font-weight: 600;
             transition: color 0.3s;
         }
-        nav a:hover { color: var(--terracotta); }
+        nav a:hover { color: var(--accent); }
         section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
         h2 {
             font-family: var(--police-titres);
             font-size: 2.5rem;
-            color: var(--terracotta);
+            color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
         .hero {
@@ -72,17 +75,17 @@
         .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .card {
-            background: var(--beige);
+            background: var(--fond-carte);
             border-radius: 16px;
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-5px); }
-        .card h3 { font-family: var(--police-titres); font-size: 1.6rem; color: var(--terracotta); margin-bottom: 1rem; }
+        .card h3 { font-family: var(--police-titres); font-size: 1.6rem; color: var(--texte-titres); margin-bottom: 1rem; }
         .btn {
             display: inline-block;
-            background: var(--terracotta);
+            background: var(--accent);
             color: white;
             padding: 0.8rem 2rem;
             border-radius: 30px;
@@ -91,7 +94,14 @@
             margin-top: 1rem;
             transition: background 0.3s;
         }
-        .btn:hover { background: var(--vert-sauge); }
+        .btn:hover { background: var(--accent-bordure); }
+        .citation {
+            background: var(--fond-citation);
+            border-left: 4px solid var(--accent-bordure);
+            padding: 1rem 2rem;
+            font-style: italic;
+            margin: 2rem 0;
+        }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; }
             nav a { margin: 0 0.5rem; font-size: 0.9rem; }
@@ -130,10 +140,13 @@
             </div>
         </div>
     </section>
-    <section id="mediation" style="background-color: var(--beige); max-width: 100%; padding: 4rem 2rem;">
+    <section id="mediation" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Médiation Créative</h2>
             <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque atelier est un espace de liberté où l’on crée pour se recréer.</p>
+            <div class="citation">
+                "Un voyage pour sentir, goûter, savourer : vers un mieux-être."
+            </div>
         </div>
     </section>
     <section id="contact">
@@ -142,7 +155,7 @@
         <p style="margin-top: 1rem; font-weight: 600;">📞 07 82 63 70 92</p>
         <p>📧 contact@votre-email.com (à personnaliser)</p>
     </section>
-    <footer style="text-align: center; padding: 2rem; background: var(--beige); color: #666; font-size: 0.9rem;">
+    <footer style="text-align: center; padding: 2rem; background: var(--fond-carte); color: var(--texte-corps); font-size: 0.9rem;">
         <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
     </footer>
 </body>
