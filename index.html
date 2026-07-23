@@ -31,6 +31,7 @@
             background-color: var(--fond-page);
             color: var(--texte-corps);
             line-height: 1.7;
+            font-size: 1.2rem;  /* Augmentation de la taille de base */
         }
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -46,7 +47,7 @@
         }
         .logo {
             font-family: var(--police-titres);
-            font-size: 1.8rem;
+            font-size: 2rem;  /* un peu plus grand */
             font-weight: 600;
             color: var(--texte-titres);
             text-decoration: none;
@@ -57,12 +58,13 @@
             color: var(--texte-corps);
             font-weight: 600;
             transition: color 0.3s;
+            font-size: 1.1rem; /* navigation plus lisible */
         }
         nav a:hover { color: var(--accent); }
         section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
         h2 {
             font-family: var(--police-titres);
-            font-size: 2.5rem;
+            font-size: 3rem;  /* était 2.5rem */
             color: var(--texte-titres);
             margin-bottom: 1.5rem;
         }
@@ -75,7 +77,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         .accueil-intro {
-            font-size: 1.8rem;
+            font-size: 2.2rem;  /* était 1.8rem */
             font-family: var(--police-titres);
             color: var(--texte-titres);
             text-align: center;
@@ -83,7 +85,7 @@
             font-style: italic;
         }
         .accueil-comment {
-            font-size: 1.2rem;
+            font-size: 1.4rem;  /* était 1.2rem */
             font-weight: 600;
             color: var(--accent);
             margin-top: 2rem;
@@ -95,7 +97,7 @@
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             font-family: var(--police-titres);
-            font-size: 1.5rem;
+            font-size: 1.7rem;  /* était 1.5rem */
             font-weight: bold;
             font-style: italic;
             color: var(--bleu-ciel-texte);
@@ -107,6 +109,7 @@
             background: var(--fond-carte);
             border-radius: 16px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            font-size: 1.2rem;
         }
         .btn {
             display: inline-block;
@@ -118,6 +121,7 @@
             font-weight: 600;
             margin-top: 1rem;
             transition: background 0.3s;
+            font-size: 1.2rem;
         }
         .btn:hover { background: var(--accent-bordure); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
@@ -129,13 +133,14 @@
             transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-5px); }
-        .card h3 { font-family: var(--police-titres); font-size: 1.6rem; color: var(--texte-titres); margin-bottom: 1rem; }
+        .card h3 { font-family: var(--police-titres); font-size: 1.9rem; color: var(--texte-titres); margin-bottom: 1rem; } /* était 1.6rem */
+        .card p { font-size: 1.1rem; }
         footer {
             text-align: center;
             padding: 2rem;
             background: var(--fond-carte);
             color: var(--texte-corps);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         .section-lieu {
             display: flex;
@@ -151,12 +156,15 @@
         }
         .section-lieu .texte {
             flex: 2 1 400px;
+            font-size: 1.2rem;
         }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; }
-            nav a { margin: 0 0.5rem; font-size: 0.9rem; }
-            .accueil-intro { font-size: 1.4rem; }
-            .citation-bleue { font-size: 1.2rem; padding: 1rem; }
+            nav a { margin: 0 0.5rem; font-size: 1rem; }
+            .accueil-intro { font-size: 1.6rem; }
+            .citation-bleue { font-size: 1.3rem; padding: 1rem; }
+            h2 { font-size: 2.2rem; }
+            .card h3 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -174,26 +182,21 @@
 
     <!-- Section Accueil -->
     <section id="accueil" style="padding-top: 2rem; padding-bottom: 6rem;">
-        <!-- IMAGE EN PREMIER (remplacez l'URL par votre propre image) -->
         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Danse et mouvement" class="accueil-image">
-
         <div class="accueil-intro">
             Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent
         </div>
         <p class="accueil-comment">Comment :</p>
-        <p style="font-size: 1.1rem;">Prendre le temps de ralentir et laisser le chemin se faire en soi</p>
+        <p>Prendre le temps de ralentir et laisser le chemin se faire en soi</p>
         <p style="margin-top: 1.5rem;">Avant l'épuisement total ou après un Burnout, une période de transition de vie complexe, venez prendre le temps de ralentir, de laisser le chemin se faire en soi.</p>
         <div class="citation-bleue">
             « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
         </div>
-
-        <!-- Bloc supplémentaire "C’est le chemin qui compte" -->
         <div class="bloc-chemin">
-            <p style="font-size: 1.3rem; font-weight: 600; color: var(--texte-titres); margin-bottom: 1rem;">C’est le chemin qui compte :</p>
+            <p style="font-size: 1.4rem; font-weight: 600; color: var(--texte-titres); margin-bottom: 1rem;">C’est le chemin qui compte :</p>
             <p>vous êtes libre pour imaginer, créer, explorer, s'exprimer et danser.</p>
             <p style="margin-top: 1.2rem;"><strong>Se déposer :</strong> déposer ses histoires et expériences, évacuer ses souffrances, troubles et mal-être, p(a)enser ses blessures, et réguler ses émotions.</p>
         </div>
-
         <a href="#contact" class="btn">Prendre rendez-vous</a>
     </section>
 
@@ -205,7 +208,6 @@
                 <div class="texte">
                     <p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p>
                 </div>
-                <!-- PHOTO DU LIEU -->
                 <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux">
             </div>
         </div>
@@ -242,7 +244,7 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
-        <p style="margin-top: 1rem; font-weight: 600;">📞 07 82 63 70 92</p>
+        <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
         <p>📧 contact@votre-email.com (à personnaliser)</p>
     </section>
 
